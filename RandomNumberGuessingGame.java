@@ -2,11 +2,11 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class NumberGuessingGame {
+public class RandomNumberGuessingGame {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
+        Scanner sc = new Scanner(System.in);
+        Random rand = new Random();
 
         System.out.println("Welcome to the Number Guessing Game!");
 
@@ -14,7 +14,7 @@ public class NumberGuessingGame {
         boolean playAgain = true;
 
         while (playAgain) {
-            int targetNumber = random.nextInt(100) + 1;
+            int targetNumber = rand.nextInt(100) + 1;
             int attempts = 0;
             int maxAttempts = 5;
 
@@ -22,8 +22,8 @@ public class NumberGuessingGame {
 
             while (attempts < maxAttempts) {
                 System.out.print("Enter your guess: ");
-                int userGuess = scanner.nextInt();
-                scanner.nextLine();
+                int userGuess = sc.nextInt();
+                sc.nextLine();
 
                 attempts++;
 
@@ -43,12 +43,12 @@ public class NumberGuessingGame {
             }
 
             System.out.print("Do you want to play again? (yes/no): ");
-            String playAgainInput = scanner.nextLine();
+            String playAgainInput = sc.nextLine();
             playAgain = playAgainInput.equalsIgnoreCase("yes");
         }
 
         System.out.println("Game over! Your score: " + score);
 
-        scanner.close();
+        sc.close();
     }
 }
