@@ -77,9 +77,12 @@ class ATM {
     }
 }
 
-public class Main{
+public class BankAccountMain{
     public static void main(String[] args) {
-        BankAccount userAccount = new BankAccount(1000); // Initial balance
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter the Initial Balance");
+        double initbal = scn.nextInt();
+        BankAccount userAccount = new BankAccount(initbal);
         ATM atm = new ATM(userAccount);
         atm.run();
     }
